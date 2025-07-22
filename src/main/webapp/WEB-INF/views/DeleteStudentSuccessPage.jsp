@@ -73,7 +73,7 @@
         <h1>Student Deleted  Successfully!</h1>
         <p>Thank you for submitting the student details.</p>
         <a href="index.html" class="button">Back to Homepage</a>
-        <a href="DeleteStudent.html" class="button">Delete a New Student</a>
+        <a href="DeleteStudent" class="button">Delete a New Student</a>
     </div>
 </body>
 </html>

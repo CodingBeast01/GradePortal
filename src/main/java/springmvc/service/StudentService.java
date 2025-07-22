@@ -22,9 +22,14 @@ public class StudentService {
 	}
 
 
-	public Student deleteUser(Student student) {
-		
-		return studentDao.deleteStudentByRollNumber(student);
-	}
+//	public Student deleteUser(Student student) {
+//		
+//		return studentDao.deleteStudentByRollNumber(student);
+//	}
+//	
 	
+	public Student deleteUser(int studentRollNumber) {
+
+		return studentDao.deleteStudentByRollNumber(studentRollNumber);
+	}
 }

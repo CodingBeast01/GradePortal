@@ -1,5 +1,7 @@
 package springmvc.dao;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +24,19 @@ public class StudentDao {
 		int id = (Integer) this.hibernateTemplate.save(student);
 		return id;
 	}
-	
+
+
+	@Transactional
+	public Student deleteStudentByRollNumber(int studentRollNumber) {
+		String hql = "FROM Student WHERE studentRollNumber = ?0";
+		List<Student> students = (List<Student>) hibernateTemplate.find(hql, studentRollNumber);
+
+		if (!students.isEmpty()) {
+			Student studentToDelete = students.get(0);
+			this.hibernateTemplate.delete(studentToDelete);
+			return studentToDelete;
+		}
+		return null;
+	}
 	
 }

@@ -26,7 +26,7 @@ public class StudentController {
 	public String addStudent(@ModelAttribute Student student , Model model) {
 		
 			System.out.println(student);
-		
+			
 			this.studentService.addStudent(student);
 		
         return "success"; 

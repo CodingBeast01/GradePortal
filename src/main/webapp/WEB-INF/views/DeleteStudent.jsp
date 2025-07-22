@@ -36,7 +36,7 @@
 		
             <div class="mb-3">
                 <label for="studentId" class="form-label"><b>Student ID</b></label>
-                <input type="text" class="form-control" id="studentId" name="student_id" required>
+                <input type="text" class="form-control" id="studentId" name="studentRollNumber" required>
             </div>
 			
 			<!-- 

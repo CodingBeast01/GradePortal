@@ -645,11 +645,11 @@
                             <i class="fas fa-user-plus"></i>
                             Add a New Student
                         </a>
-                        <a href="deleteStudent" class="feature-link">
+                        <a href="DeleteStudent" class="feature-link">
                             <i class="fas fa-user-times"></i>
                             Delete an Existing Student
                         </a>
-                        <a href="#total-students" class="feature-link">
+                        <a href="totalStudents" class="feature-link">
                             <i class="fas fa-users"></i>
                             Total Number of Students
                         </a>

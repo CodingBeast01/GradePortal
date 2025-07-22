@@ -33,10 +33,18 @@ public class HomeController {
         return "index";  // Resolves to /WEB-INF/views/index.jsp
     }
 	
-	@RequestMapping("/deleteStudent")
+	@RequestMapping("/DeleteStudent")
     public String delete() {
         return "DeleteStudent";  // Resolves to /WEB-INF/views/index.jsp
     }
+	
+	@RequestMapping("/totalStudents")
+    public String totalStudents() {
+        return "totalStudents";  // Resolves to /WEB-INF/views/index.jsp
+    }
+	
+	
+	
 	
 	
 	

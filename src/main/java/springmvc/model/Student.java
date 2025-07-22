@@ -24,7 +24,14 @@ public class Student {
 	private int chemistry;
 	private int mathematics;
 	
+
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getStudentRollNumber() {
 		return studentRollNumber;
 	}

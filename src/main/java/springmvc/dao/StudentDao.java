@@ -39,4 +39,12 @@ public class StudentDao {
 		return null;
 	}
 	
+	
+	// New method to get all students
+		public List<Student> getAllStudents() {
+			return this.hibernateTemplate.loadAll(Student.class);
+		}
+
+	
+	
 }

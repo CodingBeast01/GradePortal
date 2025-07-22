@@ -1,5 +1,7 @@
 package springmvc.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Service;
@@ -32,4 +34,11 @@ public class StudentService {
 
 		return studentDao.deleteStudentByRollNumber(studentRollNumber);
 	}
+	
+	// New method to get all students
+		public List<Student> getAllStudents() {
+			return this.studentDao.getAllStudents();
+		}
+	
+	
 }

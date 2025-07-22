@@ -38,11 +38,11 @@ public class HomeController {
         return "DeleteStudent";  // Resolves to /WEB-INF/views/index.jsp
     }
 	
-	@RequestMapping("/totalStudents")
-    public String totalStudents() {
-        return "totalStudents";  // Resolves to /WEB-INF/views/index.jsp
-    }
-	
+//	@RequestMapping("/totalStudents")
+//    public String totalStudents() {
+//        return "totalStudents";  // Resolves to /WEB-INF/views/index.jsp
+//    }
+//	
 	
 	
 	

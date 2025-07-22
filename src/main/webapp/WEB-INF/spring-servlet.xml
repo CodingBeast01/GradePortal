@@ -49,8 +49,16 @@
 				     		<prop key="hibernate.hbm2ddl.auto">update</prop>
 		     		</props>
      		</property>
-    
-     
+     		
+     		
+     		
+     		<property name="annotatedClasses">
+			    <list>
+			        <value>springmvc.model.User</value>
+			        <value>springmvc.model.Student</value>
+			    </list>
+			</property>
+     <!-- 
 		     <property name="annotatedClasses">
 		     
 		     		<list>
@@ -62,7 +70,7 @@
 		     			</value>
 		     		</list>
 		     		
-		     </property>
+		     </property> -->
 		    
      </bean>
      

@@ -1,6 +1,7 @@
 package springmvc.controller;
 
 import java.lang.reflect.Method;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,5 +42,13 @@ public class StudentController {
 			return "DeleteStudentSuccessPage"; 
 		
 	}
+	
+	@RequestMapping("/totalStudents")
+    public String totalStudents(Model model) {
+		List<Student> students = studentService.getAllStudents();
+		model.addAttribute("students", students);
+        return "totalStudents";
+    }
+	
 	
 }

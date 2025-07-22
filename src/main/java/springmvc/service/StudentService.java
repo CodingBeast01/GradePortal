@@ -44,6 +44,11 @@ public class StudentService {
 		public Student getStudentByRollNumber(int studentRollNumber) {
 			return this.studentDao.getStudentByRollNumber(studentRollNumber);
 		}
+		
+		// New method to update a student
+		public void updateStudent(Student student) {
+			this.studentDao.updateStudent(student);
+		}
 	
 	
 }

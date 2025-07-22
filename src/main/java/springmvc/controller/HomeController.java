@@ -51,6 +51,11 @@ public class HomeController {
 	    return "getStudentReportInput"; // A new JSP for inputting roll number
 	}
 	
+	// New mapping to display the form to input roll number for update
+		@RequestMapping("/UpdateStudent")
+		public String updateStudentPage() {
+			return "updateStudentInput"; // A new JSP where user enters roll number to update
+		}
 	
 	
 	

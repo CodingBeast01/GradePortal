@@ -657,7 +657,7 @@
                             <i class="fas fa-chart-bar"></i>
                             Get Student Report
                         </a>
-                        <a href="#update-student" class="feature-link">
+                        <a href="UpdateStudent" class="feature-link">
                             <i class="fas fa-user-edit"></i>
                             Update Student Information
                         </a>

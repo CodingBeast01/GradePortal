@@ -52,6 +52,12 @@ public class StudentDao {
 			List<Student> students = (List<Student>) hibernateTemplate.find(hql, studentRollNumber);
 			return students.isEmpty() ? null : students.get(0);
 		}
+		
+		// New method to update a student
+		@Transactional
+		public void updateStudent(Student student) {
+			this.hibernateTemplate.update(student);
+		}
 
 	
 	

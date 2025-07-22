@@ -65,4 +65,55 @@ public class StudentController {
 		}
 	}
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	// New mapping to show the update form with existing data
+		@RequestMapping(value = "/showUpdateStudentForm", method = RequestMethod.GET)
+		public String showUpdateStudentForm(@RequestParam("studentRollNumber") int studentRollNumber, Model model) {
+			Student student = studentService.getStudentByRollNumber(studentRollNumber);
+			if (student != null) {
+				model.addAttribute("student", student);
+				return "updateStudent"; // JSP page to display the update form
+			} else {
+				model.addAttribute("message", "Student with Roll Number " + studentRollNumber + " not found for update.");
+				return "studentNotFound"; // Redirect to a not found page
+			}
+		}
+
+		// New mapping to handle the actual update submission
+		@RequestMapping(value = "/updateStudentDetails", method = RequestMethod.POST)
+		public String updateStudent(@ModelAttribute Student student, Model model) {
+			// First, get the existing student to retain the 'id' which is @Id and auto-generated
+			Student existingStudent = studentService.getStudentByRollNumber(student.getStudentRollNumber());
+
+			if (existingStudent != null) {
+				// Update the mutable fields from the form submission to the existing student
+				existingStudent.setStudentName(student.getStudentName());
+				existingStudent.setHindi(student.getHindi());
+				existingStudent.setEnglish(student.getEnglish());
+				existingStudent.setPhysics(student.getPhysics());
+				existingStudent.setChemistry(student.getChemistry());
+				existingStudent.setMathematics(student.getMathematics());
+
+				studentService.updateStudent(existingStudent); // Pass the updated existing student
+				model.addAttribute("message", "Student details updated successfully for Roll Number: " + student.getStudentRollNumber());
+				return "updateStudentSuccess"; // JSP for success message
+			} else {
+				model.addAttribute("message", "Student with Roll Number " + student.getStudentRollNumber() + " not found for update.");
+				return "studentNotFound"; // JSP for not found message
+			}
+		}
+	
+	
+	
+	
+	
+	
 }

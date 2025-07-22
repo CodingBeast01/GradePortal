@@ -44,6 +44,14 @@ public class StudentDao {
 		public List<Student> getAllStudents() {
 			return this.hibernateTemplate.loadAll(Student.class);
 		}
+		
+
+		// New method to get a single student by roll number
+		public Student getStudentByRollNumber(int studentRollNumber) {
+			String hql = "FROM Student WHERE studentRollNumber = ?0";
+			List<Student> students = (List<Student>) hibernateTemplate.find(hql, studentRollNumber);
+			return students.isEmpty() ? null : students.get(0);
+		}
 
 	
 	

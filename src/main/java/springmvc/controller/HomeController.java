@@ -45,6 +45,12 @@ public class HomeController {
 //	
 	
 	
+	// ... existing mappings ...
+	@RequestMapping("/getStudentReportPage")
+	public String getStudentReportPage() {
+	    return "getStudentReportInput"; // A new JSP for inputting roll number
+	}
+	
 	
 	
 	

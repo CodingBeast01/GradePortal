@@ -39,6 +39,11 @@ public class StudentService {
 		public List<Student> getAllStudents() {
 			return this.studentDao.getAllStudents();
 		}
+		
+		// New method to get a single student by roll number
+		public Student getStudentByRollNumber(int studentRollNumber) {
+			return this.studentDao.getStudentByRollNumber(studentRollNumber);
+		}
 	
 	
 }

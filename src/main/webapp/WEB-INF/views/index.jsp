@@ -653,7 +653,7 @@
                             <i class="fas fa-users"></i>
                             Total Number of Students
                         </a>
-                        <a href="#student-report" class="feature-link">
+                        <a href="getStudentReportPage" class="feature-link">
                             <i class="fas fa-chart-bar"></i>
                             Get Student Report
                         </a>

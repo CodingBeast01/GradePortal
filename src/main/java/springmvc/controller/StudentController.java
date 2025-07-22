@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import springmvc.model.Student;
 import springmvc.model.User;
@@ -50,5 +51,18 @@ public class StudentController {
         return "totalStudents";
     }
 	
+	
+	// New request mapping for getting a single student report by roll number
+	@RequestMapping("/getStudentReport")
+	public String getStudentReport(@RequestParam("studentRollNumber") int studentRollNumber, Model model) {
+		Student student = studentService.getStudentByRollNumber(studentRollNumber);
+		if (student != null) {
+			model.addAttribute("student", student);
+			return "studentReport"; // JSP page to display the student report
+		} else {
+			model.addAttribute("message", "Student with Roll Number " + studentRollNumber + " not found.");
+			return "studentNotFound"; // JSP page to display a "not found" message
+		}
+	}
 	
 }

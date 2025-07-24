@@ -48,27 +48,76 @@ public class LoginController {
         return "registerSuccess"; 
     }
 	
-	
-	
-	@RequestMapping(path="/userlogin" , method = RequestMethod.POST)
-	public String userLogin(@ModelAttribute User user, Model model) {
-        User authenticatedUser = userService.authenticateUser(user.getEmail(), user.getPassword());
-        
-        	System.out.println(authenticatedUser);
-        	System.out.println(user);
-        	
-        if (authenticatedUser != null) {
-            model.addAttribute("user", authenticatedUser);
-            System.out.println("Authenticated user: " + authenticatedUser);
 
-            return "index"; // dashboard.jsp
-        } else {
-            model.addAttribute("error", "Invalid Email or Password");
-            return "login"; // login.jsp
-        }
-    }
+	
+//	@RequestMapping(path="/userlogin" , method = RequestMethod.POST)
+//	public String userLogin(@ModelAttribute User user, Model model) {
+//        User authenticatedUser = userService.authenticateUser(user.getEmail(), user.getPassword());
+//        
+//        	System.out.println(authenticatedUser);
+//        	System.out.println(user);
+//        	
+//        if (authenticatedUser != null) {
+//            model.addAttribute("user", authenticatedUser);
+//            System.out.println("Authenticated user: " + authenticatedUser);
+//
+//            return "index"; // dashboard.jsp
+//        } else {
+//            model.addAttribute("error", "Invalid Email or Password");
+//            return "login"; // login.jsp
+//        }
+//    }
 	
 	
+	
+	  @RequestMapping(value = "/userlogin1", method = RequestMethod.POST)
+	  public String login(@RequestParam("email") String email,
+	                      @RequestParam("password") String password,
+	                      @RequestParam("role") String role,
+	                      Model model)
+	  {
+	  
+	      if (role.equals("Admin")) {
+			      	if(email.equals("admin@gmail.com") && password.equals("admin"))
+			      	{
+			      		 return "index";
+			      	}
+			      	else
+			      	{
+			      		 model.addAttribute("msg", "admin credentials not matched");
+			          	 model.addAttribute("page", "/");
+			          	 model.addAttribute("pagename", "Login page");
+			               return "error";
+			      	}
+			      } 
+	      else if(role.equals("Student")) {
+	      	
+	    	  User authenticatedUser = userService.authenticateUser(email,password);
+	          
+	        	System.out.println(authenticatedUser);
+	        	//System.out.println(user);
+	        	
+	        if (authenticatedUser != null) {
+	            model.addAttribute("user", authenticatedUser);
+	            System.out.println("Authenticated user: " + authenticatedUser);
+
+	            return "studentDashboard"; // dashboard.jsp
+	        } else {
+	            model.addAttribute("error", "Invalid Email or Password");
+	            return "login1"; // login.jsp
+	        }
+	      }
+	      return "";
+	  }
+
+	  
+}
+		
+  
+	
+	  
+
+	  
 //	@RequestMapping(path="/userlogin" , method = RequestMethod.POST)
 //    public String userLogin(@ModelAttribute User user , Model model){
 //    		 
@@ -79,10 +128,12 @@ public class LoginController {
 //        return "registerSuccess"; 
 //    }
 //	
+	      
+	  
+	
+	  
 	
 	
 	
 	
-	
-	
-}
+

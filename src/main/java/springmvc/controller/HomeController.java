@@ -9,7 +9,12 @@ public class HomeController {
 	
 	@RequestMapping("/")
     public String login() {
-        return "login";  // Resolves to /WEB-INF/views/index.jsp
+        return "login1";  // Resolves to /WEB-INF/views/index.jsp
+    }
+	
+	@RequestMapping("/login1")
+    public String login1() {
+        return "login1";  // Resolves to /WEB-INF/views/index.jsp
     }
 	
 	@RequestMapping("/register")
@@ -57,7 +62,14 @@ public class HomeController {
 			return "updateStudentInput"; // A new JSP where user enters roll number to update
 		}
 	
+		@RequestMapping("/studentDashboard")
+		public String studentsDashboard() {
+			return "studentDashboard"; // A new JSP where user enters roll number to update
+		}
 	
+		
+		
+		
 	
 //	@RequestMapping("/index")
 //	public String home() {

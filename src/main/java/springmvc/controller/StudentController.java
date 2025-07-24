@@ -112,6 +112,22 @@ public class StudentController {
 		}
 	
 	
+		
+		// this one is for returning student report from studentDashboard login
+		
+		@RequestMapping("/getStudentReportFromStudentDashboard")
+		public String getStudentReportFromStudentDashboard(@RequestParam("studentRollNumber") int studentRollNumber, Model model) {
+			Student student = studentService.getStudentByRollNumber(studentRollNumber);
+			if (student != null) {
+				model.addAttribute("student", student);
+				return "singleStudentReport"; // JSP page to display the student report
+			} else {
+				model.addAttribute("message", "Student with Roll Number " + studentRollNumber + " not found.");
+				return "studentNotFound"; // JSP page to display a "not found" message
+			}
+		}
+		
+		
 	
 	
 	

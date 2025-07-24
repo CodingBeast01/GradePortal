@@ -84,10 +84,10 @@ public class LoginController {
 			      	}
 			      	else
 			      	{
-			      		 model.addAttribute("msg", "admin credentials not matched");
+			      		 model.addAttribute("msg", "Admin credentials not matched");
 			          	 model.addAttribute("page", "/");
 			          	 model.addAttribute("pagename", "Login page");
-			               return "error";
+			               return "adminLoginError";
 			      	}
 			      } 
 	      else if(role.equals("Student")) {

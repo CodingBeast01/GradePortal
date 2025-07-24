@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -92,6 +93,7 @@
 <body>
     <div class="login-container">
         <h2>User Login</h2>
+        <%-- <p>${error }</p> --%>
 
         <c:if test="${not empty error}">
             <div class="alert alert-danger" role="alert">

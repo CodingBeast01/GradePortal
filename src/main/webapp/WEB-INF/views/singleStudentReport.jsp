@@ -126,7 +126,8 @@
             </div>
         </c:if>
 
-        <a href="#download" class="back-link">Download Report</a>
+        <!-- <a href="downloadStudentReportExcel" class="back-link">Download Report</a> -->
+        <a href="downloadStudentReportExcel?studentRollNumber=${student.studentRollNumber}" class="back-link">Download Report (Excel)</a>
          <a href="studentDashboard" class="back-link">Check Result , Again</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
